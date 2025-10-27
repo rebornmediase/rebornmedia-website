@@ -1,0 +1,33 @@
+{
+  "page": {
+    "title": "Vår process",
+    "subtitle": "Från idé till lansering – strukturerat och transparent"
+  },
+  "intro": "Vi arbetar enligt en beprövad metod som säkerställer att varje projekt blir framgångsrikt. Vårt fokus ligger på nära samarbete, tydlig kommunikation och mätbara resultat.",
+  "phases": [
+    {
+      "number": "01",
+      "title": "Upptäckt & strategi",
+      "description": "Vi börjar alltid med att lyssna och förstå",
+      "details": "I denna fas djupdyker vi i era mål, utmaningar och målgrupp. Vi analyserar konkurrenter, identifierar möjligheter och skapar en tydlig strategi för projektet."
+    },
+    {
+      "number": "02",
+      "title": "Design & utveckling",
+      "description": "Vi skapar lösningar med precision och känsla",
+      "details": "Baserat på strategin designar och utvecklar vi er lösning. Ni får kontinuerliga uppdateringar och möjlighet att ge feedback genom hela processen."
+    },
+    {
+      "number": "03",
+      "title": "Lansering & uppföljning",
+      "description": "Vi lanserar och följer upp för långsiktig framgång",
+      "details": "När allt är klart lanserar vi projektet och säkerställer att allt fungerar perfekt. Vi följer upp resultaten och optimerar kontinuerligt för bästa möjliga prestanda."
+    }
+  ],
+  "cta": {
+    "title": "Redo att starta ert projekt?",
+    "subtitle": "Låt oss ta ett kostnadsfritt strategisamtal",
+    "button_text": "Kontakta oss",
+    "button_link": "kontakt.html"
+  }
+}
