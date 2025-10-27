@@ -1,0 +1,16 @@
+{
+  "page": {
+    "title": "Låt oss prata",
+    "subtitle": "Vi ser fram emot att höra från er"
+  },
+  "contact_info": {
+    "email": "info@rebornmedia.se",
+    "phone": "0761718509",
+    "address": "Stockholm, Sverige"
+  },
+  "form": {
+    "title": "Skicka ett meddelande",
+    "subtitle": "Berätta om ert projekt eller boka ett kostnadsfritt strategisamtal"
+  },
+  "cta_text": "Vi svarar vanligtvis inom 24 timmar"
+}
