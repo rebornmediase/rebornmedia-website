@@ -6,6 +6,373 @@
     <title>Reborn Media - Offertförslag</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0D12;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        .slide-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Gradient backgrounds */
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 224, 255, 0.15), transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(123, 97, 255, 0.15), transparent 50%);
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00E0FF 0%, #7B61FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #00E0FF 0%, #7B61FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Glass card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0, 224, 255, 0.2);
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #FF5C1A 0%, #FF9C00 100%);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 92, 26, 0.4);
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(255, 92, 26, 0.6);
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Package cards */
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card.popular {
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #00E0FF, #7B61FF) 1;
+            transform: scale(1.05);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 224, 255, 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF5C1A 0%, #FF9C00 100%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00E0FF 0%, #7B61FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .package-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+        }
+
+        .package-features li:before {
+            content: "✓ ";
+            color: #00E0FF;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Timeline/Process */
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00E0FF 0%, #7B61FF 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Problems list */
+        .problems-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-item {
+            background: rgba(255, 92, 26, 0.1);
+            border-left: 4px solid #FF5C1A;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        /* Benefits list */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            background: rgba(0, 224, 255, 0.1);
+            border-left: 4px solid #00E0FF;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        /* Contact section */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+        }
+
+        /* Slide number */
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Extra services */
+        .extra-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(123, 97, 255, 0.1);
+            border: 1px solid rgba(123, 97, 255, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7B61FF;
+            margin: 1rem 0;
+        }
+
+        .package-note {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .packages-container { grid-template-columns: 1fr; }
+            .process-timeline { flex-direction: column; }
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .center-text {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,9 +382,7 @@
         const user = netlifyIdentity.currentUser();
         
         if (!user) {
-            // Redirect to login
             netlifyIdentity.open();
-            
             netlifyIdentity.on("login", () => {
                 location.reload();
             });
