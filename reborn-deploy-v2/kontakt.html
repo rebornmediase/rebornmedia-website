@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakta Reborn Media - Redo för nästa nivå?">
+    <title>Kontakt - Reborn Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="no-animated-bg">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Reborn Media"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="tjanster.html">Tjänster</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="kontakt.html" class="cta-nav">Kontakt</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <section style="padding: 4rem 0;">
+            <div class="container">
+                <h1 class="section-title">Redo för nästa nivå?</h1>
+                <p class="section-subtitle">Berätta kort om ert projekt – så väcker vi liv i det tillsammans.</p>
+
+                <!-- Contact Info Cards -->
+                <div class="cards-grid" style="margin-bottom: 4rem;">
+                    <div class="card" style="text-align: center;">
+                        <h3>E-post</h3>
+                        <p><a href="mailto:info@rebornmedia.se" style="color: var(--primary-cyan); text-decoration: none;">info@rebornmedia.se</a></p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <h3>Telefon</h3>
+                        <p><a href="tel:0761718509" style="color: var(--primary-cyan); text-decoration: none;">076-171 85 09</a></p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <h3>Plats</h3>
+                        <p>Stockholm, Sverige</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Skicka ett meddelande</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Namn *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Företag</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Berätta om ert projekt *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Skicka meddelande</button>
+                    </form>
+                </div>
+
+                <!-- Booking Form -->
+                <div style="max-width: 800px; margin: 5rem auto 0;">
+                    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Boka ett möte</h2>
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+                        Vill ni boka ett kostnadsfritt strategisamtal? Fyll i formuläret så återkommer vi med förslag på tider.
+                    </p>
+                    <form id="booking-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="booking-name">Namn *</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-email">E-post *</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Telefon</label>
+                            <input type="tel" id="booking-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-company">Företag *</label>
+                            <input type="text" id="booking-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-type">Vad är ni intresserade av?</label>
+                            <select id="booking-type" name="type" style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; background: rgba(255, 255, 255, 0.05); color: var(--text-light); font-size: 1rem;">
+                                <option value="">Välj...</option>
+                                <option value="web">Webbutveckling & design</option>
+                                <option value="branding">Varumärkesdesign</option>
+                                <option value="marketing">Digital marknadsföring</option>
+                                <option value="all">Helhetslösning</option>
+                                <option value="other">Annat</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-message">Kort beskrivning</label>
+                            <textarea id="booking-message" name="message" style="min-height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Boka möte</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Reborn Media" style="height: 40px;">
+            </div>
+            <ul class="footer-links">
+                <li><a href="tjanster.html">Tjänster</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="footer-contact">
+                <p>info@rebornmedia.se</p>
+                <p>0761718509</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Reborn Media. Vi väcker liv i era idéer.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

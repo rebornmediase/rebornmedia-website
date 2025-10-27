@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Sidor"
+    files:
+      - label: "Startsida"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Huvudrubrik", name: "hero_title", widget: "string", default: "Vi väcker liv i era idéer."}
+          - {label: "Undertext", name: "hero_subtitle", widget: "text", default: "Reborn Media kombinerar strategi, design och teknik för att skapa varumärken och webbplatser som berör – och presterar."}
+          - {label: "CTA-knapp text", name: "cta_text", widget: "string", default: "Låt oss väcka liv i ert varumärke"}
+      
+      - label: "Om oss"
+        name: "about"
+        file: "om-oss.html"
+        fields:
+          - {label: "Rubrik", name: "title", widget: "string", default: "Vi är Reborn Media"}
+          - {label: "Undertext", name: "subtitle", widget: "string", default: "Vi tror på nytändning – inte nystart."}
+          - {label: "Innehåll", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "Tjänster"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tjänstenamn", name: "title", widget: "string"}
+      - {label: "Icon Emoji", name: "icon", widget: "string"}
+      - {label: "Beskrivning", name: "description", widget: "text"}
+      - {label: "Detaljer", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Inställningar"
+    files:
+      - label: "Kontaktuppgifter"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - {label: "E-post", name: "email", widget: "string", default: "info@rebornmedia.se"}
+          - {label: "Telefon", name: "phone", widget: "string", default: "0761718509"}
+          - {label: "Adress", name: "address", widget: "string", default: "Stockholm, Sverige"}
+      
+      - label: "Sociala medier"
+        name: "social"
+        file: "content/social.json"
+        fields:
+          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+          - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - {label: "Facebook", name: "facebook", widget: "string", required: false}
