@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "title": "Vi väcker liv i era idéer.",
+    "subtitle": "Reborn Media kombinerar strategi, design och teknik för att skapa varumärken och webbplatser som berör – och presterar.",
+    "cta_text": "Låt oss väcka liv i ert varumärke",
+    "cta_link": "kontakt.html"
+  },
+  "services": [
+    {
+      "title": "Webbutveckling & design",
+      "description": "Snabba, skräddarsydda CMS-webbplatser byggda för konvertering och användarupplevelse."
+    },
+    {
+      "title": "Varumärkesdesign",
+      "description": "Logotyp, färg, typografi och visuell identitet som berättar er historia."
+    },
+    {
+      "title": "Digital marknadsföring",
+      "description": "E-postkampanjer, innehåll, strategi och storytelling som engagerar."
+    }
+  ],
+  "process": {
+    "title": "Så här jobbar vi",
+    "subtitle": "Från tanke till resultat – varje steg är noggrant planerat",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Idé",
+        "description": "Vi lyssnar, förstår och analyserar era behov"
+      },
+      {
+        "number": "2",
+        "title": "Design",
+        "description": "Vi skapar och formar lösningar med precision"
+      },
+      {
+        "number": "3",
+        "title": "Lansering",
+        "description": "Vi levererar och lyfter ert varumärke"
+      }
+    ]
+  },
+  "final_cta": {
+    "title": "Redo för nästa nivå?",
+    "subtitle": "Låt oss väcka liv i era idéer – tillsammans.",
+    "button_text": "Boka möte",
+    "button_link": "kontakt.html"
+  }
+}
