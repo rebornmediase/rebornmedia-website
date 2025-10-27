@@ -1,0 +1,23 @@
+{
+  "page": {
+    "title": "Våra tjänster",
+    "subtitle": "Vi erbjuder helhetslösningar för digital tillväxt"
+  },
+  "services": [
+    {
+      "title": "Webbutveckling & design",
+      "description": "Modern webbutveckling med fokus på prestanda och användarupplevelse",
+      "details": "Vi bygger snabba, skräddarsydda webbplatser med CMS-integration, responsiv design och SEO-optimering. Varje projekt anpassas efter era unika behov och målgrupp."
+    },
+    {
+      "title": "Varumärkesdesign",
+      "description": "Visuell identitet som sticker ut och berättar er historia",
+      "details": "Från logotyp till komplett visuell identitet – vi skapar varumärken som är minnesvärda och tidlösa. Färgpalett, typografi, grafiska element och riktlinjer ingår."
+    },
+    {
+      "title": "Digital marknadsföring",
+      "description": "Strategi och innehåll som engagerar er målgrupp",
+      "details": "Vi hjälper er att nå rätt personer med rätt budskap. E-postmarknadsföring, innehållsstrategi, storytelling och kampanjplanering för långsiktig tillväxt."
+    }
+  ]
+}
