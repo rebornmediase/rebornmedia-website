@@ -7,50 +7,165 @@ public_folder: "/images"
 
 collections:
   - name: "pages"
-    label: "Sidor"
+    label: "📄 Sidor"
     files:
-      - label: "Startsida"
+      - label: "🏠 Startsida"
         name: "home"
-        file: "index.html"
+        file: "data/home.json"
         fields:
-          - {label: "Huvudrubrik", name: "hero_title", widget: "string", default: "Vi väcker liv i era idéer."}
-          - {label: "Undertext", name: "hero_subtitle", widget: "text", default: "Reborn Media kombinerar strategi, design och teknik för att skapa varumärken och webbplatser som berör – och presterar."}
-          - {label: "CTA-knapp text", name: "cta_text", widget: "string", default: "Låt oss väcka liv i ert varumärke"}
+          - label: "Hero Sektion"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Huvudrubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "text"}
+              - {label: "Knapptext", name: "cta_text", widget: "string"}
+              - {label: "Knapplänk", name: "cta_link", widget: "string", default: "kontakt.html"}
+          
+          - label: "Tjänster (Översikt)"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Beskrivning", name: "description", widget: "text"}
+          
+          - label: "Process (Översikt)"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+              - label: "Steg"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - {label: "Nummer", name: "number", widget: "string"}
+                  - {label: "Titel", name: "title", widget: "string"}
+                  - {label: "Beskrivning", name: "description", widget: "text"}
+          
+          - label: "Avslutande CTA"
+            name: "final_cta"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+              - {label: "Knapptext", name: "button_text", widget: "string"}
+              - {label: "Knapplänk", name: "button_link", widget: "string"}
       
-      - label: "Om oss"
+      - label: "💼 Tjänster"
+        name: "services"
+        file: "data/services.json"
+        fields:
+          - label: "Sidinformation"
+            name: "page"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+          
+          - label: "Tjänster"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Tjänstenamn", name: "title", widget: "string"}
+              - {label: "Kort beskrivning", name: "description", widget: "text"}
+              - {label: "Detaljerad beskrivning", name: "details", widget: "text"}
+      
+      - label: "👥 Om oss"
         name: "about"
-        file: "om-oss.html"
+        file: "data/about.json"
         fields:
-          - {label: "Rubrik", name: "title", widget: "string", default: "Vi är Reborn Media"}
-          - {label: "Undertext", name: "subtitle", widget: "string", default: "Vi tror på nytändning – inte nystart."}
-          - {label: "Innehåll", name: "body", widget: "markdown"}
-
-  - name: "services"
-    label: "Tjänster"
-    folder: "content/services"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Tjänstenamn", name: "title", widget: "string"}
-      - {label: "Icon Emoji", name: "icon", widget: "string"}
-      - {label: "Beskrivning", name: "description", widget: "text"}
-      - {label: "Detaljer", name: "body", widget: "markdown"}
-
-  - name: "settings"
-    label: "Inställningar"
-    files:
-      - label: "Kontaktuppgifter"
-        name: "contact"
-        file: "content/contact.json"
-        fields:
-          - {label: "E-post", name: "email", widget: "string", default: "info@rebornmedia.se"}
-          - {label: "Telefon", name: "phone", widget: "string", default: "0761718509"}
-          - {label: "Adress", name: "address", widget: "string", default: "Stockholm, Sverige"}
+          - label: "Sidinformation"
+            name: "page"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+          
+          - label: "Innehåll"
+            name: "content"
+            widget: "object"
+            fields:
+              - {label: "Introduktion", name: "intro", widget: "text"}
+              - {label: "Mission", name: "mission", widget: "text"}
+              - {label: "Arbetssätt", name: "approach", widget: "text"}
+          
+          - label: "Värderingar"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Värdering", name: "title", widget: "string"}
+              - {label: "Beskrivning", name: "description", widget: "text"}
       
-      - label: "Sociala medier"
-        name: "social"
-        file: "content/social.json"
+      - label: "⚙️ Process"
+        name: "process"
+        file: "data/process.json"
         fields:
-          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
-          - {label: "Instagram", name: "instagram", widget: "string", required: false}
-          - {label: "Facebook", name: "facebook", widget: "string", required: false}
+          - label: "Sidinformation"
+            name: "page"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+          
+          - {label: "Introduktionstext", name: "intro", widget: "text"}
+          
+          - label: "Faser"
+            name: "phases"
+            widget: "list"
+            fields:
+              - {label: "Nummer (t.ex. 01)", name: "number", widget: "string"}
+              - {label: "Fasnamn", name: "title", widget: "string"}
+              - {label: "Kort beskrivning", name: "description", widget: "text"}
+              - {label: "Detaljerad beskrivning", name: "details", widget: "text"}
+          
+          - label: "Avslutande CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+              - {label: "Knapptext", name: "button_text", widget: "string"}
+              - {label: "Knapplänk", name: "button_link", widget: "string"}
+      
+      - label: "📧 Kontakt"
+        name: "contact"
+        file: "data/contact.json"
+        fields:
+          - label: "Sidinformation"
+            name: "page"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+          
+          - label: "Kontaktuppgifter"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - {label: "E-post", name: "email", widget: "string"}
+              - {label: "Telefon", name: "phone", widget: "string"}
+              - {label: "Adress", name: "address", widget: "string"}
+          
+          - label: "Formulär"
+            name: "form"
+            widget: "object"
+            fields:
+              - {label: "Rubrik", name: "title", widget: "string"}
+              - {label: "Undertext", name: "subtitle", widget: "string"}
+          
+          - {label: "CTA-text under formulär", name: "cta_text", widget: "string"}
+  
+  - name: "settings"
+    label: "⚙️ Inställningar"
+    files:
+      - label: "🏢 Företagsinformation"
+        name: "company"
+        file: "data/company.json"
+        fields:
+          - {label: "Företagsnamn", name: "name", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "E-post", name: "email", widget: "string"}
+          - {label: "Telefon", name: "phone", widget: "string"}
+          - {label: "Adress", name: "address", widget: "string"}
+          - {label: "Copyright-text", name: "copyright", widget: "string"}
