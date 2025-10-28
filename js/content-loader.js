@@ -92,16 +92,16 @@ async function loadServicesContent() {
         setText('.page-header h1', data.page.title);
         setText('.page-header .subtitle', data.page.subtitle);
         
-        // Services Grid
+        // Services Grid - USE .card CLASS (matches CSS)
         const container = document.querySelector('.services-grid');
         if (container && data.services) {
             container.innerHTML = '';
             data.services.forEach(service => {
                 const serviceCard = `
-                    <div class="service-card">
+                    <div class="card">
                         <h3>${service.title}</h3>
-                        <p class="service-description">${service.description}</p>
-                        <p class="service-details">${service.details}</p>
+                        <p>${service.description}</p>
+                        ${service.details ? `<p style="margin-top: 1rem; opacity: 0.8;">${service.details}</p>` : ''}
                     </div>
                 `;
                 container.innerHTML += serviceCard;
@@ -134,7 +134,7 @@ async function loadAboutContent() {
             valuesContainer.innerHTML = '';
             data.values.forEach(value => {
                 const valueCard = `
-                    <div class="value-card">
+                    <div class="card">
                         <h3>${value.title}</h3>
                         <p>${value.description}</p>
                     </div>
