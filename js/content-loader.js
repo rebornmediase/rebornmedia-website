@@ -37,32 +37,39 @@ async function loadHomeContent() {
         setText('.hero .btn-primary', data.hero.cta_text);
         setAttr('.hero .btn-primary', 'href', data.hero.cta_link);
         
-        // Services Cards
-        const cards = document.querySelectorAll('#services-teaser .card');
-        data.services.forEach((service, index) => {
-            if (cards[index]) {
-                const h3 = cards[index].querySelector('h3');
-                const p = cards[index].querySelector('p');
-                if (h3) h3.textContent = service.title;
-                if (p) p.textContent = service.description;
-            }
-        });
+        // Services Cards - DYNAMIC CREATION
+        const cardsContainer = document.querySelector('#services-teaser .cards-grid');
+        if (cardsContainer && data.services) {
+            cardsContainer.innerHTML = ''; // Clear existing cards
+            data.services.forEach(service => {
+                const serviceCard = `
+                    <div class="card">
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    </div>
+                `;
+                cardsContainer.innerHTML += serviceCard;
+            });
+        }
         
-        // Process Timeline
+        // Process Timeline - DYNAMIC CREATION
         setText('#process-overview .section-title', data.process.title);
         setText('#process-overview .section-subtitle', data.process.subtitle);
         
-        const steps = document.querySelectorAll('.process-step');
-        data.process.steps.forEach((step, index) => {
-            if (steps[index]) {
-                const number = steps[index].querySelector('.process-number');
-                const h3 = steps[index].querySelector('h3');
-                const p = steps[index].querySelector('p');
-                if (number) number.textContent = step.number;
-                if (h3) h3.textContent = step.title;
-                if (p) p.textContent = step.description;
-            }
-        });
+        const timelineContainer = document.querySelector('.process-timeline');
+        if (timelineContainer && data.process.steps) {
+            timelineContainer.innerHTML = ''; // Clear existing steps
+            data.process.steps.forEach(step => {
+                const processStep = `
+                    <div class="process-step">
+                        <div class="process-number">${step.number}</div>
+                        <h3>${step.title}</h3>
+                        <p>${step.description}</p>
+                    </div>
+                `;
+                timelineContainer.innerHTML += processStep;
+            });
+        }
         
         // Final CTA
         setText('#final-cta .section-title', data.final_cta.title);
