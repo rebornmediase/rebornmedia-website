@@ -3,129 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Våra tjänster - Webbutveckling, Varumärkesdesign och Digital marknadsföring">
-    <title>Tjänster - Reborn Media</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Reborn Media - Tjänster</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body class="no-animated-bg">
+<body>
+    <!-- Orb Animations -->
+    <div class="orbs-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="Reborn Media"></a>
+                <img src="images/logo.svg" alt="Reborn Media">
             </div>
-            <ul class="nav-links">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Hem</a></li>
-                <li><a href="tjanster.html">Tjänster</a></li>
-                <li><a href="process.html">Process</a></li>
+                <li><a href="tjanster.html" class="active">Tjänster</a></li>
                 <li><a href="om-oss.html">Om oss</a></li>
-                <li><a href="kontakt.html" class="cta-nav">Kontakt</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Content -->
-    <div class="content">
-        <section style="padding: 4rem 0;">
-            <div class="container">
-                <h1 class="section-title">Vad vi gör</h1>
-                <p class="section-subtitle">Vi hjälper er skapa ett starkt digitalt avtryck – från idé till lansering.</p>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="cms-page-title">Våra Tjänster</h1>
+            <p class="cms-page-subtitle">Skräddarsydda lösningar för din digitala närvaro</p>
+            <p class="cms-page-description">Vi erbjuder ett brett utbud av digitala tjänster som hjälper ditt företag att växa och nå sina mål online. Varje projekt är unikt och anpassat efter dina specifika behov.</p>
+        </div>
+    </section>
 
-                <!-- Services -->
-                <div class="cards-grid">
-                    <!-- Service 1 -->
-                    <div class="card">
-                        <h3>Webbutveckling & design</h3>
-                        <p>Snabba, skräddarsydda CMS-webbplatser byggda för konvertering.</p>
-                        <ul>
-                            <li>Responsiv design (mobil, tablet, desktop)</li>
-                            <li>CMS för enkel innehållshantering</li>
-                            <li>SEO-optimering</li>
-                            <li>Snabb laddningstid</li>
-                            <li>Modern teknologi</li>
-                        </ul>
-                        <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-muted);">
-                            <strong>Så här jobbar vi:</strong><br>
-                            Idé → Design → Lansering → Resultat
-                        </p>
-                    </div>
+    <!-- Services Grid - Dynamic Content -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid"></div>
+        </div>
+    </section>
 
-                    <!-- Service 2 -->
-                    <div class="card">
-                        <h3>Varumärkesdesign</h3>
-                        <p>Logotyp, färg, typografi och visuell identitet.</p>
-                        <ul>
-                            <li>Logotypdesign</li>
-                            <li>Färgpalett & typografi</li>
-                            <li>Brand guidelines</li>
-                            <li>Grafisk profil</li>
-                            <li>Visuellt språk</li>
-                        </ul>
-                        <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-muted);">
-                            <strong>Så här jobbar vi:</strong><br>
-                            Idé → Design → Lansering → Resultat
-                        </p>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="card">
-                        <h3>Digital marknadsföring</h3>
-                        <p>E-postkampanjer, innehåll, strategi och storytelling.</p>
-                        <ul>
-                            <li>E-postmarknadsföring</li>
-                            <li>Innehållsstrategi</li>
-                            <li>Copywriting</li>
-                            <li>Social media-strategi</li>
-                            <li>Storytelling</li>
-                        </ul>
-                        <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-muted);">
-                            <strong>Så här jobbar vi:</strong><br>
-                            Idé → Design → Lansering → Resultat
-                        </p>
-                    </div>
-                </div>
-
-                <!-- CTA Section -->
-                <div style="text-align: center; margin-top: 5rem;">
-                    <h2 class="section-title" style="font-size: 2.5rem;">Vill ni veta mer?</h2>
-                    <p class="section-subtitle">Låt oss diskutera hur vi kan hjälpa er.</p>
-                    <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
-                </div>
-            </div>
-        </section>
-    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Redo att ta nästa steg?</h2>
+            <p>Låt oss skapa något fantastiskt tillsammans</p>
+            <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Reborn Media" style="height: 40px;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="Reborn Media">
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Hem</a>
+                    <a href="tjanster.html">Tjänster</a>
+                    <a href="om-oss.html">Om oss</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
-            <ul class="footer-links">
-                <li><a href="tjanster.html">Tjänster</a></li>
-                <li><a href="process.html">Process</a></li>
-                <li><a href="om-oss.html">Om oss</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-            <div class="footer-contact">
-                <p>info@rebornmedia.se</p>
-                <p>0761718509</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span class="cms-company-name">Reborn Media</span>. Alla rättigheter förbehållna.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Reborn Media. Vi väcker liv i era idéer.</p>
         </div>
     </footer>
 
-        <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/content-loader.js"></script>
 </body>
 </html>
-
