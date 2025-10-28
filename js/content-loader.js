@@ -92,8 +92,8 @@ async function loadServicesContent() {
         setText('.page-header h1', data.page.title);
         setText('.page-header .subtitle', data.page.subtitle);
         
-        // Services Grid - USE .card CLASS (matches CSS)
-        const container = document.querySelector('.services-grid');
+        // Services Grid - USE .cards-grid AND .card CLASS (matches CSS)
+        const container = document.querySelector('.cards-grid');
         if (container && data.services) {
             container.innerHTML = '';
             data.services.forEach(service => {
